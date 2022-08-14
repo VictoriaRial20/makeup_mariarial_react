@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>ProyectoReactJS Maria Rial</p>
       </header>
     </div>
   );
