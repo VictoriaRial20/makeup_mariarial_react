@@ -1,7 +1,7 @@
-const ItemListContainer =() => {
+
+const ItemListContainer = ({titulo}) => {
     return(
-        <p>TEXTO PROVISIONAL</p>
+        <p>{titulo}</p>
     )
 }
-
 export default ItemListContainer
