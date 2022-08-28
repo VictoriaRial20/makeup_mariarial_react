@@ -2,19 +2,14 @@ import './App.css';
 
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import { ItemCount } from './components/ItemCount/ItemCount';
 
 function App() {
-  const agregarCarrito = (productos)=>{
-    console.log('Agregado al carrito', productos)
-  }
-
   return (
     <div className="App">
       <header className="App-header">
         <NavBar/>
         <ItemListContainer titulo="TEXTO PROVISIONAL"/>
-        <ItemCount stock={5} initial={1} onAdd={agregarCarrito}/>
+        
       </header>
     </div>
   );

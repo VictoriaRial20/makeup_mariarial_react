@@ -1,7 +1,11 @@
+import { ItemList } from "../ItemList.js/ItemList";
+import './ItemListContainer.css';
 
 const ItemListContainer = ({titulo}) => {
     return(
-        <p>{titulo}</p>
+        <div className='ItemListContainer'>
+            <ItemList/>
+        </div>
     )
 }
 export default ItemListContainer

@@ -12,15 +12,17 @@ function NavBar() {
         <Navbar fixed="top" bg="light" variant="light" className='navBar'>
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src={logo} alt='' className='logo'/>
+                    <img src={logo} alt='' className='logo' />
                 </Navbar.Brand>
-                <Nav className="me-auto menu">
-                    <Nav.Link href="#home">SERVICIOS</Nav.Link>
-                    <Nav.Link href="#features">CONTACTO</Nav.Link>
-                    <Nav.Link href="#pricing" > 
-                        <CartWidget></CartWidget>
-                    </Nav.Link>
-                </Nav>
+                <div className='justify-content-end'>
+                    <Nav className="me-auto menu ">
+                        <Nav.Link href="#home">SERVICIOS</Nav.Link>
+                        <Nav.Link href="#features">CONTACTO</Nav.Link>
+                        <Nav.Link href="#pricing" >
+                            <CartWidget></CartWidget>
+                        </Nav.Link>
+                    </Nav>
+                </div>
             </Container>
         </Navbar>
     )
