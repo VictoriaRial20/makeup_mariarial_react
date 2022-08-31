@@ -2,13 +2,14 @@
 
 .boton{
     width: 40px;
+    color: black;
 }
 .texto{
     color: black;
-    font-size: 30px;
     font-family: 'Titillium Web', sans-serif;
 }
 .botonAgregarCarrito{
     font-family: 'Titillium Web', sans-serif;
     font-size: 15px;
+    color: black;
 }

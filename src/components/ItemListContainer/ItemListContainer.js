@@ -1,7 +1,6 @@
 import { ItemList } from "../ItemList.js/ItemList";
 import './ItemListContainer.css';
-
-const ItemListContainer = ({titulo}) => {
+const ItemListContainer = () => {
     return(
         <div className='ItemListContainer'>
             <ItemList/>

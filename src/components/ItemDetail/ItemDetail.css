@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap');
+.imgServicioSelect {
+    width: 350px;
+    padding: 10px;
+}
+.ItemDetail {
+    background-color: rgb(255, 239, 234);
+}
+.ItemDetailInfo {
+    padding: 10px;
+}
+.textoName {
+    color: black;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    margin-bottom: 20px;
+}
+.textoPrice {
+    color: black;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.textoDescription {
+    font-size: 18px;
+    color: black;
+    font-family: 'Titillium Web', sans-serif;
+}
+.coloredLine {
+    background-color: rgb(139, 134, 134);
+    height: 1px;
+}
+.prueba{
+    padding: auto;
+    margin: auto;
+}
