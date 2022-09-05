@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import obtenerServicios from '../../helper/helper';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import {useParams} from "react-router-dom";
 const ItemDetailContainer = () =>{
+    const {detalleServicio} = useParams();
+    const [serviciosSeleccionado, setServiciosSeleccionado] = useState({});
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        obtenerServicios()
+            .then(response => {
+                setServiciosSeleccionado(response.find(servicio => servicio.id ===  detalleServicio))
+                setLoading(false)
+            })
+    }, [detalleServicio])
     return(
         <div>
-            <ItemDetail/>
+            <ItemDetail serviciosSeleccionado={serviciosSeleccionado}/>
         </div>
     )
 }

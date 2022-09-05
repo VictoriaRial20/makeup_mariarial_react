@@ -4,17 +4,13 @@ import './ItemCount.css'
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-
 export const ItemCount = ({ stock, initial, onAdd }) => {
     const [itemcount, setItemcount] = useState(initial);
-
     const incrementar = () => {
         if (itemcount < stock) {
             setItemcount(itemcount + 1)
         }
     }
-
     const decrementar = () => {
         if (itemcount > 0) {
             setItemcount(itemcount - 1)

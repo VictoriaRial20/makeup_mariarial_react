@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import obtenerServicios from '../../helper/helper';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ItemDetail.css'
 import { ItemCount } from '../ItemCount/ItemCount';
-const ItemDetail = () => {
-    const [serviciosSeleccionado, setServiciosSeleccionado] = useState({});
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        obtenerServicios()
-            .then(response => {
-                setServiciosSeleccionado(response.find(servicio => servicio.id === 1))
-                setLoading(false)
-            })
-    }, [])
-    //console.log(serviciosSeleccionado);
+const ItemDetail = ({ serviciosSeleccionado }) => {
+    console.log(serviciosSeleccionado);
     const agregarCarrito = (productos) => {
         console.log('Agregado al carrito', productos);
     }
