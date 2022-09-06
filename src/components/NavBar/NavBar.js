@@ -15,8 +15,8 @@ function NavBar() {
                 <div className='justify-content-end'>
                     <Nav className="me-auto menu ">
                         <Nav.Link as={NavLink} to="/servicios">SERVICIOS</Nav.Link>
-                        <Nav.Link as={NavLink} to="/servicios/cursos">CURSOS</Nav.Link>
-                        <Nav.Link as={NavLink} to="/servicios/maquillajes">MAQUILLAJES</Nav.Link>
+                        <Nav.Link as={NavLink} to="/cursos">CURSOS</Nav.Link>
+                        <Nav.Link as={NavLink} to="/maquillajes">MAQUILLAJES</Nav.Link>
                         <Nav.Link as={NavLink} to="/contacto">CONTACTO</Nav.Link>
                         <Nav.Link as={NavLink} to="/carrito" >
                             <CartWidget></CartWidget>

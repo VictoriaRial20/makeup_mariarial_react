@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### INTRODUCCIÓN 
+
+El proyecto consiste en un ecommerce para maquilladoras, dónde las mismas ofrecen servicios (Cursos y Maquillajes).
+
+Se busca un diseño limpio y sencillo. Utilizando la librería bootstrap para el estilo. 
