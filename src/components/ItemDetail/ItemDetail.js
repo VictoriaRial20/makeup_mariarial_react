@@ -2,11 +2,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ItemDetail.css'
+import React from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
-const ItemDetail = ({ serviciosSeleccionado }) => {
-    console.log(serviciosSeleccionado);
-    const agregarCarrito = (productos) => {
-        console.log('Agregado al carrito', productos);
+const ItemDetail = ({ serviciosSeleccionado}) => {
+    //console.log(serviciosSeleccionado);
+    const onAdd =(itemcount) =>{
+        console.log("Cantidad:", itemcount);
     }
     return (
         <Container fluid className='ItemDetail'>
@@ -24,7 +25,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
                         <br></br>
                     </div>
                     <div>
-                        <ItemCount stock={5} initial={0} onAdd={agregarCarrito} />
+                        <ItemCount stock={5} initial={0} onAdd={onAdd}/>
                     </div>
                 </Col>
                 <Col xs={1}></Col>

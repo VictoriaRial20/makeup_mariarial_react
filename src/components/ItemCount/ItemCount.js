@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './ItemCount.css'
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/Row';
+import { NavLink } from "react-router-dom";
 import Col from 'react-bootstrap/Col';
 export const ItemCount = ({ stock, initial, onAdd }) => {
     const [itemcount, setItemcount] = useState(initial);
@@ -19,11 +20,33 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <Container>
             <Row>
-                <Col sm={2} className='text-end'><Button variant="outline-dark" onClick={decrementar} className="boton"> - </Button></Col>
-                <Col sm={1}><p className='texto'>{itemcount} </p></Col>
-                <Col sm={2} className='text-start'><Button variant="outline-dark" onClick={incrementar} className="boton"> + </Button></Col>
+                <Col sm={3}></Col>
+                <Col sm={2}>
+                    <Button variant="outline-dark" onClick={decrementar} className="boton">
+                        -
+                    </Button>
+                </Col>
+                <Col sm={2}>
+                    <p className='texto'>{itemcount}</p>
+                </Col>
+                <Col sm={2}>
+                    <Button variant="outline-dark" onClick={incrementar} className="boton">
+                        +
+                    </Button>
+                </Col>
+                <Col sm={3}></Col>
+            </Row>
+            <Row><Col><br></br></Col></Row>
+            <Row>
                 <Col xs={6}>
-                    <Button className='botonAgregarCarrito' variant="outline-dark" onClick={() => { if (itemcount > 0) { onAdd(itemcount) } }}>AGREGAR AL CARRITO</Button>
+                    <Button className='botonAgregarCarrito' variant="outline-dark" onClick={() => { if (itemcount > 0) { onAdd(itemcount) } }}>
+                        AGREGAR AL CARRITO
+                    </Button>
+                </Col>
+                <Col sm={6}>
+                    <Button className='botonAgregarCarrito' variant="outline-dark" as={NavLink} to="/carrito">
+                        FINALIZAR COMPRA
+                    </Button>
                 </Col>
             </Row>
         </Container>
