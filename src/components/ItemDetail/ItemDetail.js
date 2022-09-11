@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 const ItemDetail = ({ serviciosSeleccionado }) => {
     //console.log(serviciosSeleccionado);
     const{addServices} = useContext(CartContext);
+    //const [quantity, setQuantity] = useState();
     const onAdd = (itemcount) => {
         console.log("Cantidad:", itemcount);
         const newService = {...serviciosSeleccionado, quantity:itemcount}

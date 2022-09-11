@@ -39,7 +39,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                             AGREGAR AL CARRITO
                         </Button>
                         <Button className='botonComprar' variant="dark" as={NavLink} to="/carrito">
-                            COMPRAR AHORA
+                            VER CARRITO
                         </Button>
                     </div>
                 </Col>
