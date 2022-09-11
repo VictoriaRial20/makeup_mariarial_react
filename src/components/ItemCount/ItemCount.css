@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap');
 .boton{
-    width: 40px;
     color: black;
+}
+.boton:hover {
+    color: black;
+    background-color: transparent;
+    border-color: transparent;
 }
 .texto{
     color: black;
@@ -9,6 +13,13 @@
 }
 .botonAgregarCarrito{
     font-family: 'Titillium Web', sans-serif;
-    font-size: 15px;
     color: black;
+}
+.botonComprar{
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+}
+.botonComprar:hover {
+    background-color: rgb(223, 182, 182);
+    border-color: white;
 }

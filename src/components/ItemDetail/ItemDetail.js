@@ -2,39 +2,52 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ItemDetail.css'
-import React from 'react';
+import React, { useContext } from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
-const ItemDetail = ({ serviciosSeleccionado}) => {
+import { CartContext } from '../../context/CartContext';
+import Button from 'react-bootstrap/esm/Button';
+import { NavLink } from "react-router-dom";
+const ItemDetail = ({ serviciosSeleccionado }) => {
     //console.log(serviciosSeleccionado);
-    const onAdd =(itemcount) =>{
+    const{addServices} = useContext(CartContext);
+    const onAdd = (itemcount) => {
         console.log("Cantidad:", itemcount);
+        const newService = {...serviciosSeleccionado, quantity:itemcount}
+        console.log(newService);
+        addServices(newService)
     }
     return (
         <Container fluid className='ItemDetail'>
             <Row>
-                <Col xs={1}></Col>
-                <Col xs={5} className='prueba'>
+                <Col xs={2}></Col>
+                <Col xs={4}>
+                    <div className='text-end'>
+                        <img src={serviciosSeleccionado.img} alt="" className='imgServicioSelect'></img>
+                    </div>
+                </Col>
+                <Col xs={4} className='prueba'>
                     <div >
-                        <h1 className='textoName'><strong>{serviciosSeleccionado.name}</strong></h1>
+                        <div className='text-end'>
+                            <Button className='botonAtras' as={NavLink} to="/servicios">Seguir Comprando</Button>
+                        </div>
+                        <h1 className='textoName text-start'><strong>{serviciosSeleccionado.name}</strong></h1>
                         <div className='coloredLine'></div>
                         <br></br>
-                        <p className='textoDescription'><strong>INFORMACIÓN</strong></p>
-                        <h3 className='textoDescription'>{serviciosSeleccionado.description}</h3>
-                        <h2 className='textoPrice'><strong>COSTO: ${serviciosSeleccionado.price}</strong></h2>
+                        <p className='textoDescription text-start'>INFORMACIÓN</p>
+                        <h3 className='textoDescription text-start'>{serviciosSeleccionado.description}</h3>
+                        <h2 className='textoPrice text-start'>${serviciosSeleccionado.price}</h2>
                         <div className='coloredLine'></div>
                         <br></br>
                     </div>
                     <div>
-                        <ItemCount stock={5} initial={0} onAdd={onAdd}/>
+                        <ItemCount stock={5} initial={0} onAdd={onAdd} />
+                    </div>
+                    <div>
+                        <br></br>
+                        <div className='coloredLine'></div>
                     </div>
                 </Col>
-                <Col xs={1}></Col>
-                <Col xs={4}>
-                    <div className='text-start'>
-                        <img src={serviciosSeleccionado.img} alt="" className='imgServicioSelect'></img>
-                    </div>
-                </Col>
-                <Col xs={1}></Col>
+                <Col xs={2}></Col>
             </Row>
         </Container>
     )

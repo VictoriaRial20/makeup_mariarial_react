@@ -19,34 +19,29 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
     }
     return (
         <Container>
-            <Row>
-                <Col sm={3}></Col>
+            <Row className='justify-content-sm-center'>
+                <Col></Col>
                 <Col sm={2}>
-                    <Button variant="outline-dark" onClick={decrementar} className="boton">
-                        -
-                    </Button>
+                    <Button variant="outline-dark" onClick={decrementar} className="boton">-</Button>
                 </Col>
                 <Col sm={2}>
                     <p className='texto'>{itemcount}</p>
                 </Col>
                 <Col sm={2}>
-                    <Button variant="outline-dark" onClick={incrementar} className="boton">
-                        +
-                    </Button>
+                    <Button variant="outline-dark" onClick={incrementar} className="boton">+</Button>
                 </Col>
-                <Col sm={3}></Col>
+                <Col></Col>
             </Row>
-            <Row><Col><br></br></Col></Row>
             <Row>
-                <Col xs={6}>
-                    <Button className='botonAgregarCarrito' variant="outline-dark" onClick={() => { if (itemcount > 0) { onAdd(itemcount) } }}>
-                        AGREGAR AL CARRITO
-                    </Button>
-                </Col>
-                <Col sm={6}>
-                    <Button className='botonAgregarCarrito' variant="outline-dark" as={NavLink} to="/carrito">
-                        FINALIZAR COMPRA
-                    </Button>
+                <Col>
+                    <div className="d-grid gap-2">
+                        <Button className='botonAgregarCarrito' variant="outline-dark" onClick={() => { if (itemcount > 0) { onAdd(itemcount) } }}>
+                            AGREGAR AL CARRITO
+                        </Button>
+                        <Button className='botonComprar' variant="dark" as={NavLink} to="/carrito">
+                            COMPRAR AHORA
+                        </Button>
+                    </div>
                 </Col>
             </Row>
         </Container>
