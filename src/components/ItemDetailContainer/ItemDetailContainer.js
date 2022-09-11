@@ -3,14 +3,14 @@ import obtenerServicios from '../../helper/helper';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from "react-router-dom";
 const ItemDetailContainer = () =>{
-    const {detalleServicio} = useParams();
+    const {servicioId} = useParams();
     const [serviciosSeleccionado, setServiciosSeleccionado] = useState({});
     useEffect(() => {
         obtenerServicios()
             .then(response => {
-                setServiciosSeleccionado(response.find(servicio => servicio.id ===  detalleServicio))
+                setServiciosSeleccionado(response.find(servicio => servicio.id ===  servicioId))
             })
-    }, [detalleServicio])
+    }, [servicioId])
     return(
         <div>
             <ItemDetail serviciosSeleccionado={serviciosSeleccionado}/>
