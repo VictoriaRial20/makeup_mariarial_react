@@ -7,6 +7,7 @@ export const CartProvider = ({ children }) => {
         if (!isInCart(service.id)) {
             const newList = [...servicesCartList, service];
             setServicesCartList(newList);
+            //console.log(newList);
         }
     }
     const removeService = (serviceId) => {

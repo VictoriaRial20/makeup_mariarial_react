@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ItemDetail.css'
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { CartContext } from '../../context/CartContext';
 import Button from 'react-bootstrap/esm/Button';
@@ -10,12 +10,14 @@ import { NavLink } from "react-router-dom";
 const ItemDetail = ({ serviciosSeleccionado }) => {
     //console.log(serviciosSeleccionado);
     const{addServices} = useContext(CartContext);
-    //const [quantity, setQuantity] = useState();
+    const [quantity, setQuantity] = useState(0);
     const onAdd = (itemcount) => {
+       // const [quantity, setQuantity] = useState(itemcount);
         console.log("Cantidad:", itemcount);
         const newService = {...serviciosSeleccionado, quantity:itemcount}
         console.log(newService);
         addServices(newService)
+        setQuantity(itemcount);
     }
     return (
         <Container fluid className='ItemDetail'>

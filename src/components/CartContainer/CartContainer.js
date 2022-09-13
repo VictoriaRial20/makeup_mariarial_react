@@ -39,11 +39,10 @@ export const CartContainer = () => {
                 }
               </tbody>
             </Table>
-            {servicesCartList.length > 0 ?
+            {servicesCartList.length > 0 &&
               <div className='text-end'>
                 <Button variant="dark" onClick={() => clearService()} className="botonEliminarTodo">BORRAR TODO</Button>
-              </div>
-              : null}
+              </div>}
           </div>
           : <p style={{marginTop: '100px'}}>Su carrito actualmente está vacío.</p>}
       </div >
