@@ -1,5 +1,6 @@
+import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import {NavBar} from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { CartContainer } from './components/CartContainer/CartContainer';
 import PagContact from './components/PagContact/PagContact';

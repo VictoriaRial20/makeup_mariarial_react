@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import './ItemCount.css'
@@ -46,9 +47,6 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                                         }
                                     }}>
                                         AGREGAR AL CARRITO
-                                    </Button>
-                                    <Button className='botonComprar' variant="dark" as={NavLink} to="/cart">
-                                        VER CARRITO
                                     </Button>
                                 </div>
                             </Col>

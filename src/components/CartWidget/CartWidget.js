@@ -1,16 +1,26 @@
-//import { useState } from 'react';
-//import { CartContext } from '../../context/CartContext';
-import iconCart from '../../img/iconCart.png'
-import './CartWidget.css'
+import React from 'react';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import iconCart from '../../img/iconCart.png';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
+import './CartWidget.css';
 function CartWidget() {
-    /*const [itemsQuantity, setItemQuantity] = useState(0);
-    const finaly = servicesCartList.reduce((a,v)=> a=a+v.quantity, 0)
-    console.log("resulado", finaly)
-    setItemQuantity(finaly)*/
+    const {getTotalItem,servicesCartList} = useContext(CartContext);
     return (
         <div>
-            <img src={iconCart} alt='' className='iconCart' />
-            <p></p>
+            {
+                servicesCartList.length>0 && 
+                <>
+                <Container>
+                <Row>
+                    <Col><img src={iconCart} alt='' className='iconCart' /></Col>
+                    <Col><p>{getTotalItem()}</p></Col>
+                </Row>
+                </Container>
+                </>     
+            }
         </div>
     )
 }

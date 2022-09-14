@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col';
 export const CartContainer = () => {
   const { servicesCartList, removeService, clearService, totalServices } = useContext(CartContext);
   console.log(servicesCartList);
-  return (
+  return(
     <Container fluid>
       <div>
         {servicesCartList.length > 0 ?
@@ -30,7 +30,7 @@ export const CartContainer = () => {
               <tbody>
                 {
                   servicesCartList.map(item => (
-                    <tr>
+                    <tr key={item.id}>
                       <td>< img src={item.img} alt="imgServicio" className='imgService'></img></td>
                       <td>{item.name}</td>
                       <td>${item.price}</td>
@@ -50,7 +50,7 @@ export const CartContainer = () => {
                     <Col><p>Total: ${totalServices()}</p></Col>
                   </Row>
                   <Row>
-                    <Col sm={8}></Col>
+                    <Col sm={7}></Col>
                     <Col><Button variant="outline-dark" onClick={() => clearService()}>BORRAR TODO</Button></Col>
                     <Col><Button variant="dark" className="botonFinalizarCompra">FINALIZAR COMPRA</Button></Col>
                   </Row>
