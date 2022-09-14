@@ -11,6 +11,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
     //console.log(serviciosSeleccionado);
     const{addServices} = useContext(CartContext);
     const [quantity, setQuantity] = useState(0);
+    console.log(quantity);
     const onAdd = (itemcount) => {
        // const [quantity, setQuantity] = useState(itemcount);
         console.log("Cantidad:", itemcount);
@@ -18,6 +19,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
         console.log(newService);
         addServices(newService)
         setQuantity(itemcount);
+        //console.log("quantity", quantity);
     }
     return (
         <Container fluid className='ItemDetail'>

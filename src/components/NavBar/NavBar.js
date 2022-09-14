@@ -18,7 +18,7 @@ function NavBar() {
                         <Nav.Link as={NavLink} to="/categoria/cursos">CURSOS</Nav.Link>
                         <Nav.Link as={NavLink} to="/categoria/maquillajes">MAQUILLAJES</Nav.Link>
                         <Nav.Link as={NavLink} to="/contacto">CONTACTO</Nav.Link>
-                        <Nav.Link as={NavLink} to="/carrito" >
+                        <Nav.Link as={NavLink} to="/cart" >
                             <CartWidget></CartWidget>
                         </Nav.Link>
                     </Nav>
