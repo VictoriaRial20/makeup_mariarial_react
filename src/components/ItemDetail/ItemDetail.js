@@ -12,6 +12,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
     //console.log(serviciosSeleccionado);
     const { addServices } = useContext(CartContext);
     const [quantity, setQuantity] = useState(0);
+    console.log(quantity);
     const onAdd = (itemcount) => {
         // const [quantity, setQuantity] = useState(itemcount);
         console.log("Cantidad:", itemcount);
@@ -45,7 +46,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
                         <br></br>
                     </div>
                     <div>
-                        {
+                        {/*
                             quantity > 0 &&
                             <Container>
                                 <div className="d-grid gap-2">
@@ -54,7 +55,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
                                     </Button>
                                     <br></br>
                                 </div>
-                            </Container>
+                            </Container>*/
                         }
                         <ItemCount stock={5} initial={0} onAdd={onAdd} />
                     </div>

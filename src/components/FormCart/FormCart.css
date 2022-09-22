@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400;1,600&display=swap');
+.botonFinalizarCompra{
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    border-radius: 3px;
+}
+.botonFinalizarCompra:hover {
+    background-color: rgb(201, 158, 158);
+    border-color: white;
+}
