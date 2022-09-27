@@ -31,15 +31,17 @@ export const CartContainer = () => {
     }
     console.log("order", order);
     const queryRef = collection(baseDeDatos, "orders");
-    addDoc(queryRef, order).then(respuesta => setIdOrder(respuesta.id));
-    console.log(idOrder);
-    swal({
-        title: "Orden Enviada Correctamente", 
-        text: "Identificador: " + idOrder, 
+    addDoc(queryRef, order).then(respuesta => {
+      setIdOrder(respuesta.id);
+      swal({
+        title: "Orden Enviada Correctamente",
+        text: "Identificador: " + respuesta.id,
         icon: 'success',
         button: 'Aceptar',
+      });
+      clearService();
     });
-
+    console.log(idOrder);
   }
   return (
     <Container fluid>
