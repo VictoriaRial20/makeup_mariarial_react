@@ -7,32 +7,32 @@ import { NavLink } from "react-router-dom";
 import Col from 'react-bootstrap/Col';
 export const ItemCount = ({ stock, initial, onAdd }) => {
     const [itemcount, setItemcount] = useState(initial);
-    const incrementar = () => {
+    const increase = () => {
         if (itemcount < stock) {
             setItemcount(itemcount + 1)
         }
     }
-    const decrementar = () => {
+    const decremented = () => {
         if (itemcount > 0) {
             setItemcount(itemcount - 1)
         }
     }
-    const [esconderCount, setEsconderCount] = useState(false);
+    const [hideCount, setHideCount] = useState(false);
     return (
         <Container>
             <div>
-                {!esconderCount ?
+                {!hideCount ?
                     <>
                         <Row className='justify-content-sm-center'>
                             <Col></Col>
                             <Col sm={2}>
-                                <Button variant="outline-dark" onClick={decrementar} className="boton">-</Button>
+                                <Button variant="outline-dark" onClick={decremented} className="boton">-</Button>
                             </Col>
                             <Col sm={2}>
                                 <p className='texto'>{itemcount}</p>
                             </Col>
                             <Col sm={2}>
-                                <Button variant="outline-dark" onClick={incrementar} className="boton">+</Button>
+                                <Button variant="outline-dark" onClick={increase} className="boton">+</Button>
                             </Col>
                             <Col></Col>
                         </Row>
@@ -42,7 +42,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                                     <Button className='botonAgregarCarrito' variant="outline-dark" onClick={() => {
                                         if (itemcount > 0) {
                                             onAdd(itemcount)
-                                            setEsconderCount(true)
+                                            setHideCount(true)
                                         }
                                     }}>
                                         AGREGAR AL CARRITO

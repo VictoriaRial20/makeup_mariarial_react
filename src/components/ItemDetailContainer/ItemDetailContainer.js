@@ -2,25 +2,25 @@ import React, { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
-import { baseDeDatos } from '../../utils/firebase';
+import { dataBase } from '../../utils/firebase';
 const ItemDetailContainer = () => {
-    const { servicioId } = useParams();
-    const [serviciosSeleccionado, setServiciosSeleccionado] = useState({});
+    const { serviceId } = useParams();
+    const [serviceSelect, setServiceSelect] = useState({});
     useEffect(() => {
-        const query = doc(baseDeDatos, "items", servicioId);
+        const query = doc(dataBase, "items", serviceId);
         getDoc(query).then(
             response => {
                 const newDoc = {
                     ...response.data(),
                     id: response.id
                 }
-            setServiciosSeleccionado(newDoc);
+            setServiceSelect(newDoc);
             }
         ).catch(error=>console.log("error"));
-    }, [servicioId])
+    }, [serviceId])
     return (
         <div>
-            <ItemDetail serviciosSeleccionado={serviciosSeleccionado} />
+            <ItemDetail serviceSelect={serviceSelect} />
         </div>
     )
 }

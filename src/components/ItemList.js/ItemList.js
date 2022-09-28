@@ -1,13 +1,13 @@
 import React from 'react';
 import { Item } from '../Item/Item';
 import './ItemList.css';
-export const ItemList = ({servicios}) => {
+export const ItemList = ({services}) => {
     return (
         <div className='itemList'>
             {
-                servicios.map((servicio) => {
+                services.map((services) => {
                     return (
-                        <Item key={servicio.name} servicio={servicio}/>
+                        <Item key={services.name} services={services}/>
                     )
                 })
             }

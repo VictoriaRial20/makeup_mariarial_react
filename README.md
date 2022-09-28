@@ -1,6 +1,6 @@
 # Makeup Maria Rial
-## Ecommerce para servicios de maquilladoras
-El proyecto consiste en un ecommerce para maquilladoras, dónde las mismas ofrecen servicios (Cursos y Maquillajes).
+## Ecommerce para services de maquilladoras
+El proyecto consiste en un ecommerce para maquilladoras, dónde las mismas ofrecen services (Cursos y Maquillajes).
 ## Librerías 
 Se utilizaron diferentes librerias
 - [Boostrap] 

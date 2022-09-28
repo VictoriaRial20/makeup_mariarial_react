@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { FormCart } from '../FormCart/FormCart';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
-import { baseDeDatos } from '../../utils/firebase';
+import { dataBase } from '../../utils/firebase';
 import swal from 'sweetalert';
 export const CartContainer = () => {
   const { servicesCartList, removeService, clearService, totalServices } = useContext(CartContext);
@@ -26,8 +26,7 @@ export const CartContainer = () => {
       total: totalServices(),
       data: Timestamp.fromDate(new Date())
     }
-    console.log("order", order);
-    const queryRef = collection(baseDeDatos, "orders");
+    const queryRef = collection(dataBase, "orders");
     addDoc(queryRef, order).then(respuesta => {
       setIdOrder(respuesta.id);
       swal({
@@ -96,7 +95,7 @@ export const CartContainer = () => {
           :
           <>
             <p style={{ marginTop: '100px' }}>Su carrito actualmente está vacío.</p>
-            <Button variant="dark" className="botonIrDeCompras" as={NavLink} to="/servicios">Ir de compras</Button>
+            <Button variant="dark" className="botonIrDeCompras" as={NavLink} to="/services">Ir de compras</Button>
           </>
         }
       </div >

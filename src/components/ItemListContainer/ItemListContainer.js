@@ -3,29 +3,29 @@ import './ItemListContainer.css';
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where} from "firebase/firestore";
-import { baseDeDatos } from '../../utils/firebase';
+import { dataBase } from '../../utils/firebase';
 const ItemListContainer = () => {
-    const { tipoServicio } = useParams();
-    const [servicios, setServicios] = useState([]);
+    const { TypeService } = useParams();
+    const [services, setServices] = useState([]);
     useEffect(() => {
         const getData = async () => {
             try {
-                let queryRef = tipoServicio === undefined ? collection(baseDeDatos, "items") : query(collection(baseDeDatos,"items"), where("category","==", tipoServicio));
+                let queryRef = TypeService === undefined ? collection(dataBase, "items") : query(collection(dataBase,"items"), where("category","==", TypeService));
                 const response = await getDocs(queryRef);
                 const docs = response.docs;
                 const data = docs.map(doc => {
                     return { ...doc.data(), id: doc.id }
                 })
-                setServicios(data);
+                setServices(data);
             } catch (error) {
                 console.log("Error");
             }
         }
         getData();
-    }, [tipoServicio])
+    }, [TypeService])
     return (
         <div className='ItemListContainer'>
-            <ItemList servicios={servicios} />
+            <ItemList services={services} />
         </div>
     )
 }
