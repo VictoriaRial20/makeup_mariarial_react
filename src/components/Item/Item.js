@@ -2,8 +2,8 @@ import React from 'react';
 import './Item.css'
 import Button from 'react-bootstrap/Button';
 import {NavLink} from "react-router-dom";
-export const Item = ({servicio}) => {
-    const {name, id , img, price} = servicio
+export const Item = ({services}) => {
+    const {name, id , img, price} = services;
     return (
         <div className="serviciosItem" key={name} as={NavLink} to={`/detalle/${id}`}>
             <img src={img} alt="" className='imagen'/>

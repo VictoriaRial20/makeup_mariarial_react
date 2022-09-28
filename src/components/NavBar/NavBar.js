@@ -15,7 +15,7 @@ export const NavBar = () => {
                 </Navbar.Brand>
                 <div className='justify-content-end'>
                     <Nav className="me-auto menu ">
-                        <Nav.Link as={NavLink} to="/services">services</Nav.Link>
+                        <Nav.Link as={NavLink} to="/services">SERVICIOS</Nav.Link>
                         <Nav.Link as={NavLink} to="/categoria/cursos">CURSOS</Nav.Link>
                         <Nav.Link as={NavLink} to="/categoria/maquillajes">MAQUILLAJES</Nav.Link>
                         <Nav.Link as={NavLink} to="/cart" >
