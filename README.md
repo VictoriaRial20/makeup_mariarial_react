@@ -9,7 +9,7 @@ Se utilizaron diferentes librerias
 Se busca un diseño limpio y sencillo. Utilizando librerías como bootstrap para el estilo y SweetAlert para los mensajes en pantalla. 
 
    [Boostrap]: <https://react-bootstrap.netlify.app>
-   [Sweet alert]: <https://sweetalert.js.org>
+   [SweetAlert]: <https://sweetalert.js.org>
 
 
 # Installation
