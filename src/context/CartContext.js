@@ -10,11 +10,10 @@ export const CartProvider = ({ children }) => {
             console.log("newlist", newList);
         } else {
             const serviceRepeat = servicesCartList.find(item => item.id === service.id);
-            //console.log("serviceRepeat",serviceRepeat);
             const newQuantity = serviceRepeat.quantity + service.quantity;
             {
                 newQuantity > 5 ? console.log("Supera Stock") :
-                serviceRepeat.quantity = newQuantity;
+                    serviceRepeat.quantity = newQuantity;
                 const newList = [...servicesCartList.filter(item => item.id !== serviceRepeat.id), serviceRepeat];
                 setServicesCartList(newList);
                 console.log("newlist", newList);
@@ -41,12 +40,12 @@ export const CartProvider = ({ children }) => {
         })
         return (totalPrice)
     }
-    const getTotalItem = () =>{
-        const totalItem = servicesCartList.reduce((acc,item)=> acc=acc+item.quantity, 0);
+    const getTotalItem = () => {
+        const totalItem = servicesCartList.reduce((acc, item) => acc = acc + item.quantity, 0);
         return totalItem;
     }
     return (
-        <CartContext.Provider value={{ servicesCartList, addServices, removeService, clearService, isInCart, totalServices, getTotalItem}}>
+        <CartContext.Provider value={{ servicesCartList, addServices, removeService, clearService, isInCart, totalServices, getTotalItem }}>
             {children}
         </CartContext.Provider>
     )
