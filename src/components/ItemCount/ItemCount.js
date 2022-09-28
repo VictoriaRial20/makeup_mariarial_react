@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
 import './ItemCount.css'
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/Row';
@@ -53,12 +52,10 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
                         </Row>
                     </>
                     :
-                    <div>
-                        <div className="d-grid gap-2">
-                            <Button className='botonComprar' variant="dark" as={NavLink} to="/cart">
-                                FINALIZAR COMPRA
-                            </Button>
-                        </div>
+                    <div className="d-grid gap-2">
+                        <Button className='botonComprar' variant="dark" as={NavLink} to="/cart">
+                            FINALIZAR COMPRA
+                        </Button>
                     </div>
                 }
             </div>

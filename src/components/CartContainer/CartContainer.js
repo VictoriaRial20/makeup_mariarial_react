@@ -1,5 +1,4 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 import Button from 'react-bootstrap/esm/Button';
 import Table from 'react-bootstrap/Table';
@@ -11,12 +10,10 @@ import Col from 'react-bootstrap/Col';
 import { FormCart } from '../FormCart/FormCart';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import { baseDeDatos } from '../../utils/firebase';
-import { useState } from 'react';
 import swal from 'sweetalert';
 export const CartContainer = () => {
   const { servicesCartList, removeService, clearService, totalServices } = useContext(CartContext);
   const [idOrder, setIdOrder] = useState("");
-  //console.log(servicesCartList);
   const sendOrder = (e) => {
     e.preventDefault();
     const order = {
@@ -95,8 +92,6 @@ export const CartContainer = () => {
                 }
               </Col>
             </Row>
-
-
           </div>
           :
           <>

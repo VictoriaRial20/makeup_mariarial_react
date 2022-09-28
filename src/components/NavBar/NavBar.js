@@ -5,8 +5,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import './NavBar.css'
 import logo from '../../img/logoprincipal.png';
 import CartWidget from '../CartWidget/CartWidget';
-import {NavLink} from "react-router-dom";
-export const NavBar = () =>{
+import { NavLink } from "react-router-dom";
+export const NavBar = () => {
     return (
         <Navbar fixed="top" bg="light" variant="light" className='navBar'>
             <Container>

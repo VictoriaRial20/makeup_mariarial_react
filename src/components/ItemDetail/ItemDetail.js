@@ -1,26 +1,22 @@
-import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './ItemDetail.css'
-import { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { CartContext } from '../../context/CartContext';
 import Button from 'react-bootstrap/esm/Button';
 import { NavLink } from "react-router-dom";
 const ItemDetail = ({ serviciosSeleccionado }) => {
-    //console.log(serviciosSeleccionado);
     const { addServices } = useContext(CartContext);
     const [quantity, setQuantity] = useState(0);
     console.log(quantity);
     const onAdd = (itemcount) => {
-        // const [quantity, setQuantity] = useState(itemcount);
         console.log("Cantidad:", itemcount);
-        const newService = { ...serviciosSeleccionado, quantity: itemcount }
+        const newService = { ...serviciosSeleccionado, quantity: itemcount };
         console.log(newService);
-        addServices(newService)
+        addServices(newService);
         setQuantity(itemcount);
-        //console.log("quantity", quantity);
     }
     return (
         <Container fluid className='ItemDetail'>
@@ -46,18 +42,7 @@ const ItemDetail = ({ serviciosSeleccionado }) => {
                         <br></br>
                     </div>
                     <div>
-                        {/*
-                            quantity > 0 &&
-                            <Container>
-                                <div className="d-grid gap-2">
-                                    <Button variant="outline-dark" as={NavLink} to="/cart">
-                                        VER CARRITO
-                                    </Button>
-                                    <br></br>
-                                </div>
-                            </Container>*/
-                        }
-                        <ItemCount stock={5} initial={0} onAdd={onAdd} />
+                        <ItemCount stock={serviciosSeleccionado.stock} initial={0} onAdd={onAdd} />
                     </div>
                     <div>
                         <br></br>

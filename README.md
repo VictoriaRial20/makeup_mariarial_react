@@ -1,3 +1,18 @@
+# Makeup Maria Rial
+## Ecommerce para servicios de maquilladoras
+El proyecto consiste en un ecommerce para maquilladoras, dónde las mismas ofrecen servicios (Cursos y Maquillajes).
+## Librerías 
+Se utilizaron diferentes librerias
+- [Boostrap] 
+- [SweetAlert] 
+
+Se busca un diseño limpio y sencillo. Utilizando librerías como bootstrap para el estilo y SweetAlert para los mensajes en pantalla. 
+
+   [Boostrap]: <https://react-bootstrap.netlify.app>
+   [Sweet alert]: <https://sweetalert.js.org>
+
+
+# Installation
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,9 +83,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### INTRODUCCIÓN 
-
-El proyecto consiste en un ecommerce para maquilladoras, dónde las mismas ofrecen servicios (Cursos y Maquillajes).
-
-Se busca un diseño limpio y sencillo. Utilizando la librería bootstrap para el estilo. 
